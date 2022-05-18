@@ -1,6 +1,7 @@
 import React,{ Component} from "react";
 import { Media } from "reactstrap";
-import {Card, CardImg, CardImgOverlay, CardText, CardBody,CardTitle} from 'reactstrap'
+import {Card, CardImg, CardImgOverlay, CardText, CardBody,CardTitle} from 'reactstrap';
+import dateFormat from "dateformat";
 
  class StaffList extends Component {
      constructor(props) {
@@ -20,8 +21,8 @@ import {Card, CardImg, CardImgOverlay, CardText, CardBody,CardTitle} from 'react
                 <Card> 
                      <CardBody>
                         <CardTitle className="name">Họ và Tên : {dish.name}</CardTitle>
-                        <CardText>Ngày Sinh:{dish.doB}</CardText>
-                        <CardText>Ngày vào công ty:{dish.startDate}</CardText>
+                        <CardText>Ngày Sinh: {dateFormat(dish.date,'dd/mm/yyyy')}</CardText>
+                        <CardText>Ngày vào công ty: {dateFormat(dish.startDate,"dd/mm/yyyy")}</CardText>
                         <CardText>Phòng Ban : {dish.department.name}</CardText>
                         <CardText>Số ngày nghỉ còn lại : {dish.annualLeave}</CardText>
                         <CardText>Số ngày làm thêm : {dish.overTime}</CardText>
