@@ -57,12 +57,11 @@ import {Button} from "reactstrap"
             <div className="container">
                 <div className="row">
                     <div className="col-6">
-                        <Button color="danger" className="m-2" onClick={() => this.onCol}>1 Cột </Button>
-                        <Button color="danger" className="m-2">2 Cột </Button>
-                        <Button color="danger" className="m-2">3 Cột </Button>
-                        <Button color="danger" className="m-2">4 Cột </Button>
-                        <Button color="danger" className="m-2">5 Cột </Button>
-                        <Button color="danger" className="m-2">6 Cột </Button>
+                        <Button color="danger" className="m-2" onClick={() => this.onColumnChange("col-12 col-sm-6 col-lg-12 mt-2")}>1 Cột </Button>
+                        <Button color="danger" className="m-2" onClick={() => this.onColumnChange("col-12 col-sm-6 col-lg-6 mt-2")}>2 Cột </Button>
+                        <Button color="danger" className="m-2" onClick={() => this.onColumnChange("col-12 col-sm-6 col-lg-4 mt-2")}>3 Cột </Button>
+                        <Button color="danger" className="m-2" onClick={() => this.onColumnChange("col-12 col-sm-6 col-lg-3 mt-2")}>4 Cột </Button>
+                        <Button color="danger" className="m-2" onClick={() => this.onColumnChange("col-12 col-sm-6 col-lg-2 mt-2")}>6 Cột </Button>
                     </div>
                 </div>
                 <div className="row">
