@@ -18,7 +18,6 @@ import {Button} from "reactstrap"
     renderDish(dish) {
         if(dish !=null){
             return(
-
                 <div className="col-12">
                 <Card> 
                      <CardBody>
@@ -39,10 +38,13 @@ import {Button} from "reactstrap"
             )
         }
     }
+    onColumnChange(dish) {
+        this.setState({columnSelect: dish})
+    }
      render() {
          const menu = this.props.dishes.map((dish) => {
              return (
-                 <div key ={dish.id} className='col-12 col-sm-6 col-lg-4 mt-2'>
+                 <div key ={dish.id} className={this.state.columnSelect}>
                      <Card onClick={() => this.onDishSelected(dish)}> 
                             <CardBody body className="ml-5">
                                  <CardTitle>{dish.name}</CardTitle>
