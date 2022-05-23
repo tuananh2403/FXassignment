@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {Navbar,NavbarBrand} from 'reactstrap'
 import StaffList from './StaffList'
 import { STAFFS } from '../shared/staffs';
-import Header from './Header'
+import Header from './Header';
+import Footer from './Footer';
 class Main extends Component {
   constructor(props){
     super(props);
@@ -21,6 +22,7 @@ class Main extends Component {
         <StaffList dishes={this.state.dishes} 
         onClick={(dish) => this.onSelectDish(dish)}
         selectedDish = {this.state.selectedDish}/>
+        <Footer />
     </div>
   );
 }
