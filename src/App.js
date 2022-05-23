@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import Main from './components/MainConponent';
 
+import React, { Component } from 'react';
+import Main from './components/MainComponent'
+import {STAFFS} from './shared/staffs'
 class App extends Component{
   
   render() {
