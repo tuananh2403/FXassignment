@@ -7,8 +7,8 @@ import DetailStaff from './DetailStaff'
 import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
-import Home from './Home';
-import Department from './departmentcomponents';
+import Salary from './SalaryComponent';
+import Department from './DepartmentComponent';
 
 class Main extends Component{
   constructor(props) {
@@ -26,6 +26,7 @@ class Main extends Component{
           <Switch>
               <Route exact path="/liststaff" component={() => <StaffList dishes={this.state.staffs}/>}/>
               <Route exact path='/department' component={() => <Department department={this.state.department}/> }/>
+              <Route exact path='/salary' component={() => <Salary staffs={this.state.staffs} allItem ={1}/>} />
               <Redirect to='/liststaff'/>
           </Switch>
         <Footer />
