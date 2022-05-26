@@ -18,13 +18,27 @@ class Main extends Component{
       department: DEPARTMENTS,
     }
   }
- 
+  
   render() {
+    const staffsWithId = ({match}) => {
+      if (this.state.staffs.length >parseInt(match.params.idStaff,10)){
+      return(
+          <DetailStaff dish={this.state.staffs.filter((staffs) => staffs.id === parseInt(match.params.idStaff,10))[0]} 
+             />
+      );
+      }
+      else{
+        return(
+          <h3>lỗi</h3>
+        )
+      }
+    };
     return (
       <div className="app">
         <Header />
           <Switch>
               <Route exact path="/liststaff" component={() => <StaffList dishes={this.state.staffs}/>}/>
+              <Route path='/liststaff/:idStaff' component={staffsWithId} />
               <Route exact path='/department' component={() => <Department department={this.state.department}/> }/>
               <Route exact path='/salary' component={() => <Salary staffs={this.state.staffs} allItem ={1}/>} />
               <Redirect to='/liststaff'/>

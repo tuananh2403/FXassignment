@@ -1,15 +1,23 @@
 import React from "react";
-import {Card,CardBody,CardTitle} from "reactstrap"
+import {Card,CardBody,CardTitle,CardImg} from "reactstrap"
+import {Link} from "react-router-dom"
 
+function RenderMenuItem ({staffs}) {
+    return (
+        <Card>
+            <Link to={`/liststaff/${staffs.id}`} >
+                <CardImg width="100%" src={staffs.image} alt={staffs.name} />
+                <CardTitle style = {{color:"black", textAlign: "center"}}>{staffs.name}</CardTitle>
+            </Link>
+        </Card>
+    );
+}
 function StaffList(props) {
-    const menu = props.dishes.map((dish) => {
+    const menu = props.dishes.map((staffs) => {
         return (
-            <div key ={dish.id} className="col-12 col-sm-4 col-lg-2 mt-2">
-                <Card onClick={() => props.onClick(dish.id)}>
-                <img src={dish.image}/>
-                       <CardBody body className="ml-5">
-                            <CardTitle>{dish.name}</CardTitle>
-                       </CardBody>
+            <div key ={staffs.id} className="col-12 col-sm-4 col-lg-2 mt-2">
+                <Card>
+                <RenderMenuItem staffs = {staffs}/>
                 </Card>
             </div>
         )

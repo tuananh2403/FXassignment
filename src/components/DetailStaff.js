@@ -1,11 +1,20 @@
 import React from "react";
-import {Card, CardImg, CardImgOverlay, CardText, CardBody,CardTitle} from 'reactstrap';
+import {Card, CardImg, CardImgOverlay, CardText, CardBody,CardTitle,Breadcrumb,BreadcrumbItem} from 'reactstrap';
+import {Link} from 'react-router-dom';
 import dateFormat from "dateformat";
 function DetailStaff(props){
-    if(props.dish){
         return(
             <div className="container">
-        <div className="row ">
+             <div className="row ">
+                 <Breadcrumb>
+                    <BreadcrumbItem><Link to="/liststaff">Nhan Vien</Link></BreadcrumbItem>
+                    <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+                 </Breadcrumb>
+                 <div className="col-12">
+                        <hr />
+                    </div  >
+                    </div>
+        <div className="row">
             <div className="col-3 mt-4">
                 <img width ='100%'src={props.dish.image}/>
             </div>
@@ -22,7 +31,6 @@ function DetailStaff(props){
         </div>
     </div>
         )
-    }else return <div></div>
 }
 
 export default DetailStaff;
